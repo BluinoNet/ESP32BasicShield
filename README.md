@@ -1,29 +1,44 @@
 ## Demo App ESP32 Basic Shield with NF
 
-You can use the [editor on GitHub](https://github.com/BluinoNet/BluinoNet.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+This demo is using ESP Shield from Bluino Store [ESP32 Basic Shield](https://www.tokopedia.com/bluino/esp32-basic-shield-belajar-iot-hanya-shield)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+.NET nanoFramework is a free and open-source platform that enables the writing of managed code applications for constrained embedded devices.
 
-### Markdown
+ESP32 is supported by NF. This repo contains driver and demo for this shield. Follow this instruction to get started:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Install Dotnet
 
-```markdown
-Syntax highlighted code block
+Follow this instruction: [Install Dotnet](https://dotnet.microsoft.com/en-us/download)
 
-# Header 1
-## Header 2
-### Header 3
+### Install Visual Studio
 
-- Bulleted
-- List
+Get Editor: [Install Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
-1. Numbered
-2. List
+### Install NanoFramework
 
-**Bold** and _Italic_ and `Code` text
+Grab and install NF extension for VS [Install Extension NF](https://marketplace.visualstudio.com/items?itemName=nanoframework.nanoFramework-VS2019-Extension)
 
-[Link](url) and ![Image](src)
+### Install Nano Flasher
+
+open command line and type
+```
+dotnet tool install -g nanoff
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Flash NanoFramework to your device
+
+Follow this instruction: [Flash NanoFramework to ESP32](https://github.com/nanoframework/nanoFirmwareFlasher)
+
+### Clone this repo
+
+Download or clone this repo from command line 
+```
+git clone https://github.com/BluinoNet/ESP32BasicShield
+```
+
+### Open Project
+
+Open solution with visual studio (BluinoNet.ESP32BasicShield.sln), set "DemoESP32BasicShield" as startup project then run (F5)
+
+Enjoy and Cheers :D.
+--BluinoNet Team from Buitenzorg Makers Club
