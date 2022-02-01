@@ -31,6 +31,12 @@ dotnet tool install -g nanoff
 
 Follow this instruction: [Flash NanoFramework to ESP32](https://github.com/nanoframework/nanoFirmwareFlasher)
 
+open command line and type
+```
+nanoff --platform esp32 --update --serialport COM12
+```
+Note: COM12 can be replaced with the correct port of your ESP32 USB Serial Port
+
 ### Clone this repo
 
 Download or clone this repo from command line 
