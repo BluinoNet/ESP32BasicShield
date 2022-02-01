@@ -1,12 +1,14 @@
-﻿using System;
+﻿using nanoFramework.Hardware.Esp32;
+using System;
 using System.Collections;
+using System.Device.Pwm;
 using System.Threading;
-using Windows.Devices.Pwm;
+//using Windows.Devices.Pwm;
 namespace BluinoNet.Modules
 {
     public class Tunes :IDisposable
     {
-        private PwmPin pwm;
+        private PwmChannel pwm;
         private Queue playlist;
         private Thread worker;
         private object syncRoot;
@@ -25,9 +27,10 @@ namespace BluinoNet.Modules
         /// <param name="pinNumber">The socket that this module is plugged in to.</param>
         public Tunes(int pinNumber)
         {
-            PwmController controller = PwmController.GetDefault();
-           
-            this.pwm = controller.OpenPin(pinNumber);
+            Configuration.SetPinFunction(pinNumber, DeviceFunction.PWM1);
+            this.pwm = PwmChannel.CreateFromPin(pinNumber);
+            
+            //this.pwm = controller.OpenPin(pinNumber);
             this.playlist = new Queue();
             this.syncRoot = new object();
         }
@@ -103,8 +106,8 @@ namespace BluinoNet.Modules
                 if (this.worker != null && this.worker.IsAlive)
                     this.worker.Abort();
             }
-            this.pwm.Controller.SetDesiredFrequency(100.0);
-            this.pwm.SetActiveDutyCyclePercentage(0.0001);
+            this.pwm.Frequency = (100);
+            this.pwm.DutyCycle = (0.0001);
             //this.pwm.Set(100.0, 0.0001);
         }
 
@@ -124,8 +127,8 @@ namespace BluinoNet.Modules
 
                 if (note.Tone.Frequency != 0.0)
                 {
-                    this.pwm.Controller.SetDesiredFrequency((int)note.Tone.Frequency);
-                    this.pwm.SetActiveDutyCyclePercentage(0.5);
+                    this.pwm.Frequency = ((int)note.Tone.Frequency);
+                    this.pwm.DutyCycle = (0.5);
                 }
                 else
                 {
@@ -135,8 +138,8 @@ namespace BluinoNet.Modules
 
                 Thread.Sleep(note.Duration);
             }
-            this.pwm.Controller.SetDesiredFrequency(100.0);
-            this.pwm.SetActiveDutyCyclePercentage(0.0001);
+            this.pwm.Frequency = (100);
+            this.pwm.DutyCycle = (0.0001);
            
         }
 

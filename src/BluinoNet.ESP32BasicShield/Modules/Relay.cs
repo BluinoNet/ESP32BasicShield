@@ -24,7 +24,7 @@ namespace BluinoNet.Modules
 
         public void TurnOff()
         {
-            _Relay.Write(PinValue.High);
+            _Relay.Write(PinValue.Low);
         }
     }
 }

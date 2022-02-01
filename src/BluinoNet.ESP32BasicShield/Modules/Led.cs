@@ -24,7 +24,7 @@ namespace BluinoNet.Modules
         
         public void TurnOff()
         {
-            _led.Write(PinValue.High);
+            _led.Write(PinValue.Low);
         }
     }
 }

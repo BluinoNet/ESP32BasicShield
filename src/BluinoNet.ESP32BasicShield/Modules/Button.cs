@@ -80,7 +80,7 @@ namespace BluinoNet.Modules
      
 		private void OnInterrupt(object sender, PinValueChangedEventArgs e)
 		{
-			var state = this.input.Read()==PinValue.High ? ButtonState.Released : ButtonState.Pressed;
+			var state = this.input.Read()==PinValue.High ? ButtonState.Pressed : ButtonState.Released;
 			this.OnButtonEvent(this, state);
 		}
 
@@ -91,8 +91,8 @@ namespace BluinoNet.Modules
 
 				switch (state)
 				{
-					case ButtonState.Released: this.ButtonReleased(sender, state); break;
-					case ButtonState.Pressed: this.ButtonPressed(sender, state); break;
+					case ButtonState.Released: this.ButtonReleased?.Invoke(sender, state); break;
+					case ButtonState.Pressed: this.ButtonPressed?.Invoke(sender, state); break;
 				}
 		}
 	}

@@ -44,11 +44,11 @@
     <Reference Include="System.Device.I2c">
       <HintPath>..\packages\nanoFramework.System.Device.I2c.1.0.2\lib\System.Device.I2c.dll</HintPath>
     </Reference>
+    <Reference Include="System.Device.Pwm">
+      <HintPath>..\packages\nanoFramework.System.Device.Pwm.1.0.0\lib\System.Device.Pwm.dll</HintPath>
+    </Reference>
     <Reference Include="System.Device.Spi">
       <HintPath>..\packages\nanoFramework.System.Device.Spi.1.0.2\lib\System.Device.Spi.dll</HintPath>
-    </Reference>
-    <Reference Include="Windows.Devices.Pwm">
-      <HintPath>..\packages\nanoFramework.Windows.Devices.Pwm.1.6.0\lib\Windows.Devices.Pwm.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
