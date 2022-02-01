@@ -18,6 +18,17 @@ Get Editor: [Install Visual Studio](https://visualstudio.microsoft.com/downloads
 
 Grab and install NF extension for VS [Install Extension NF](https://marketplace.visualstudio.com/items?itemName=nanoframework.nanoFramework-VS2019-Extension)
 
+### Install Nano Flasher
+
+open command line and type
+```
+dotnet tool install -g nanoff
+```
+
+### Flash NanoFramework to your device
+
+Follow this instruction: [Flash NanoFramework to ESP32](https://github.com/nanoframework/nanoFirmwareFlasher)
+
 ### Clone this repo
 
 Download or clone this repo from command line 
