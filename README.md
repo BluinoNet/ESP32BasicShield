@@ -1,5 +1,7 @@
 ## Demo App ESP32 Basic Shield with NF
 
+![BluinoNet](https://images.tokopedia.net/img/cache/700/VqbcmM/2021/8/9/efd311ae-b130-43c4-a051-99520a2351f7.jpg.webp?ect=4g)
+
 This demo is using ESP Shield from Bluino Store [ESP32 Basic Shield](https://www.tokopedia.com/bluino/esp32-basic-shield-belajar-iot-hanya-shield)
 
 .NET nanoFramework is a free and open-source platform that enables the writing of managed code applications for constrained embedded devices.
@@ -28,6 +30,12 @@ dotnet tool install -g nanoff
 ### Flash NanoFramework to your device
 
 Follow this instruction: [Flash NanoFramework to ESP32](https://github.com/nanoframework/nanoFirmwareFlasher)
+
+open command line and type
+```
+nanoff --platform esp32 --update --serialport COM12
+```
+Note: COM12 can be replaced with the correct port of your ESP32 USB Serial Port
 
 ### Clone this repo
 
