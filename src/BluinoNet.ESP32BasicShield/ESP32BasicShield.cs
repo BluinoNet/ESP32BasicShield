@@ -3,6 +3,7 @@ using nanoFramework.Hardware.Esp32;
 using System;
 using System.Device.Gpio;
 using System.Device.I2c;
+using System.Device.Pwm;
 using System.Device.Spi;
 
 namespace BluinoNet
@@ -70,6 +71,19 @@ namespace BluinoNet
             var device = controller.OpenPin(Pin, Mode);            
             return device;
         }
+
+        /// <summary>
+        /// Get PWM Channel by PinNumber
+        /// </summary>
+        /// <param name="pinNumber"></param>
+        /// <param name="PwmId">Default is PWM 1</param>
+        /// <returns></returns>
+        public PwmChannel GetPwm(int pinNumber, DeviceFunction PwmId = ESP32Pwms.PWM1)
+        {
+            Configuration.SetPinFunction(pinNumber, PwmId);
+            var pwm = PwmChannel.CreateFromPin(pinNumber);
+            return pwm;
+        }
         public ESP32BasicShield(int PinButton, int PinBuzzer, int PinLed, int PinRelay): this()
         {
             SetupRelay(PinRelay);
@@ -104,8 +118,27 @@ namespace BluinoNet
             this.BoardRelay = new Relay(PinRelay);
         }
     }
-
-    public class ESP32Pins
+    public class ESP32Pwms
+    {
+        public const DeviceFunction PWM1 = DeviceFunction.PWM1;
+        public const DeviceFunction PWM2 = DeviceFunction.PWM2;
+        public const DeviceFunction PWM3 = DeviceFunction.PWM3;
+        public const DeviceFunction PWM4 = DeviceFunction.PWM4;
+        public const DeviceFunction PWM5 = DeviceFunction.PWM5;
+        public const DeviceFunction PWM6 = DeviceFunction.PWM6;
+        public const DeviceFunction PWM7 = DeviceFunction.PWM7;
+        public const DeviceFunction PWM8 = DeviceFunction.PWM8;
+        public const DeviceFunction PWM9 = DeviceFunction.PWM9;
+        public const DeviceFunction PWM10 = DeviceFunction.PWM10;
+        public const DeviceFunction PWM11 = DeviceFunction.PWM11;
+        public const DeviceFunction PWM12 = DeviceFunction.PWM12;
+        public const DeviceFunction PWM13 = DeviceFunction.PWM13;
+        public const DeviceFunction PWM14 = DeviceFunction.PWM14;
+        public const DeviceFunction PWM15 = DeviceFunction.PWM15;
+        public const DeviceFunction PWM16 = DeviceFunction.PWM16;
+    
+    }
+        public class ESP32Pins
     {
         public const int IO00 = 0;
 
