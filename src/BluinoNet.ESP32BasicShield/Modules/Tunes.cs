@@ -1,4 +1,5 @@
 ﻿using nanoFramework.Hardware.Esp32;
+using nanoFramework.Hardware.Esp32.Touch;
 using System;
 using System.Collections;
 using System.Device.Pwm;
@@ -114,7 +115,7 @@ namespace BluinoNet.Modules
         private void DoWork()
         {
             MusicNote note = null;
-
+            pwm.Start();
             while (true)
             {
                 lock (this.syncRoot)

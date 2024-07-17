@@ -25,11 +25,26 @@
     <ProjectReference Include="..\BluinoNet.ESP32BasicShield\BluinoNet.ESP32BasicShield.nfproj" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Iot.Device.Buzzer">
+      <HintPath>..\packages\nanoFramework.Iot.Device.Buzzer.1.2.590\lib\Iot.Device.Buzzer.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib">
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.System.Collections">
       <HintPath>..\packages\nanoFramework.System.Collections.1.5.31\lib\nanoFramework.System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Device.Model">
+      <HintPath>..\packages\nanoFramework.System.Device.Model.1.2.586\lib\System.Device.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Device.Pwm">
+      <HintPath>..\packages\nanoFramework.System.Device.Pwm.1.1.10\lib\System.Device.Pwm.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Math">
+      <HintPath>..\packages\nanoFramework.System.Math.1.5.43\lib\System.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="UnitsNet.Frequency">
+      <HintPath>..\packages\UnitsNet.nanoFramework.Frequency.5.54.0\lib\UnitsNet.Frequency.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
